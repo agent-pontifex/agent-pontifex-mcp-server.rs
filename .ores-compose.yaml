@@ -1,0 +1,11 @@
+schema_version: ores.compose.v1
+project: agent-pontifex-mcp-server
+allow_lazy_start: false
+
+services:
+  agent-pontifex-mcp-server:
+    name: agent-pontifex-mcp-server
+    runtime: host
+    build:
+      - ["cargo", "build", "--bins"]
+    command: ["./target/debug/agent-pontifex-mcp-server.rs"]
